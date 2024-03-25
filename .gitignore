@@ -1,0 +1,28 @@
+# Binaries for programs and plugins
+main
+vlua_integration
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
+
+# Ignore binary output folders
+bin/
+
+# Ignore include and lib folders
+include/
+lib64/
+
+# Ignore common editor/system specific metadata
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# ENV
+.env
+
+# vweb and database
+*.db
+*.js

@@ -1,0 +1,1 @@
+v -cg run src
