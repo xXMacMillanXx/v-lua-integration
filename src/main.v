@@ -15,7 +15,7 @@ fn f(l lua.State, x f64, y f64) !f64 {
 	l.push_number(x)
 	l.push_number(y)
 
-	if l.p_call(2, 1, 0) != lua.lua_ok {
+	if l.p_call(2, 1, 0) != .ok {
 		return error('Error running Lua function: ${l.to_string(-1)}')
 	}
 	if !l.is_number(-1) {
@@ -41,7 +41,7 @@ fn main() {
 
 	register_lua(l)
 
-	if l.do_file('src/script.lua') != lua.lua_ok {
+	if !l.do_file('src/script.lua') {
 		error_msg := l.to_string(-1)
 		println('Error running Lua script: ${error_msg}')
 		l.pop(1)
